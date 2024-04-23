@@ -12,13 +12,14 @@ type voucherService struct {
 	voucherRepo repository.VoucherRepository
 }
 
-func (v voucherService) CreateDiscountVoucher(userID string, discount int) error {
+func (v voucherService) CreateDiscountVoucherForTopupFee(userID string, discount int) error {
 	return v.voucherRepo.Insert(entity.VoucherEntity{
 		VoucherID:   primitive.NewObjectID(),
 		UserID:      userID,
 		Discount:    discount,
 		Description: "",
 		ExpireDate:  time.Now().Add(time.Hour * 24 * 30),
+		VoucherType: "TOPUP_MOBILE_PHONE_FEE",
 	})
 }
 

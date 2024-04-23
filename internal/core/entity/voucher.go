@@ -11,4 +11,5 @@ type VoucherEntity struct {
 	Discount    int                `bson:"discount"`
 	Description string             `bson:"description"`
 	ExpireDate  time.Time          `bson:"expireDate"`
+	VoucherType string             `bson:"voucherType"`
 }

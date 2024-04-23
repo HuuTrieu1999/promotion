@@ -31,7 +31,7 @@ func (c campaignService) LoginCampaign(request request.LoginCampaignRequest) *re
 	}
 
 	if count <= c.voucherQuota {
-		err = c.voucherService.CreateDiscountVoucher(request.UserID, 30)
+		err = c.voucherService.CreateDiscountVoucherForTopupFee(request.UserID, 30)
 		if err != nil {
 			log.Printf("fail to Create Discount Voucher %s\n", err)
 			return c.createFailedResponse(error_code.InternalError, error_code.InternalErrMsg)
