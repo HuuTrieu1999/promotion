@@ -24,6 +24,8 @@ It has a unique compound index of campaignID and userID making the query faster.
 
 <img src="./asset/promotion.drawio.png">
 
+<img src="./asset/promotion-diagram.png">
+
 ### CampaignLogin
 
 | Field       | Type   | Description        | 
