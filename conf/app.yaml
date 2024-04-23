@@ -1,0 +1,15 @@
+mongodb:
+  uri: mongodb://localhost:27017
+  db-name: cake
+  voucher-collection: voucher
+  campaign-collection: campaign
+
+redis:
+  uri: localhost:6379
+
+server:
+  http:
+    port: 8080
+
+voucher:
+  quota: 100
