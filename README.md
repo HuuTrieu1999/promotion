@@ -14,6 +14,31 @@ The promotion system has 3 main components:
 
 <img src="./asset/promotion.drawio.png">
 
+### CampaignLogin
+
+| Field       | Type   | Description        | 
+|:------------|:-------|:-------------------| 
+| UserID      | string | ID of the user     | 
+| CampaignID  | string | ID of the campaign |
+| CreatedDate | string | Time UTC +7        |
+
+Index:
+* campaign_idx (CampaignID, UserID): unique, compound
+
+### Voucher
+
+| Field       | Type     | Description                           | 
+|:------------|:---------|:--------------------------------------| 
+| _id         | ObjectID | ID of the voucher                     | 
+| UserID      | string   | ID of the user                        | 
+| Discount    | int      | Percent: 0 -> 100                     | 
+| Description | string   |                                       |
+| ExpireDate  | string   | Expire Date: Time UTC +7              |
+| VoucherType | string   | Which flow the voucher can be applied |
+| CreatedDate | string   | Time UTC +7                           |
+
+Index:
+* voucher_idx (UserID)
 
 
 
